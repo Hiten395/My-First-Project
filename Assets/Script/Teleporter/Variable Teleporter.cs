@@ -41,6 +41,8 @@ public class VariableTeleporter : MonoBehaviour
 
     public void Switch(int amount)
     {
+        if (power == false) return;
+
         int colorSwitchBy = amount;
 
         currentDestinationID += amount;
@@ -98,6 +100,20 @@ public class VariableTeleporter : MonoBehaviour
         powerLight.TurnOn();
     }
 
+    public void TurnOff()
+    {
+        power = false;
+
+        foreach(var location in variableTeleporters)
+        {
+            location.Switch(0);
+        }
+
+
+        PowerLight powerLight = GetComponentInChildren<PowerLight>();
+        powerLight.TurnOff();
+    }
+
     IEnumerator TeleportRoutine(GameObject other)
     {
         //VFX.Play();
@@ -116,7 +132,6 @@ public class VariableTeleporter : MonoBehaviour
             player.PickUp();
             characterController.enabled = true;
             variableTeleporters[currentDestinationID].AvoidLopp();
-            Debug.Log("b");
             return;
         }
         other.transform.position = currentDestination.transform.position + new Vector3(0,1.5f,0);
