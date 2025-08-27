@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class ColorSwitcher : MonoBehaviour
 {
-    [SerializeField] Material[] colors;
+    Material[] colors;
 
     MeshRenderer meshRenderer;
 
     int ID = 0;
 
-    private void Start()
+    private void ColorSet()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = colors[ID];
@@ -28,5 +28,11 @@ public class ColorSwitcher : MonoBehaviour
         }
 
         meshRenderer.material = colors[ID];
+    }
+
+    public void GetColor(Material[] color)
+    {
+        colors = color;
+        ColorSet();
     }
 }

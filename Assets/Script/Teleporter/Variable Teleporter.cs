@@ -4,7 +4,8 @@ using System.Collections;
 public class VariableTeleporter : MonoBehaviour
 {
     [SerializeField] GameObject[] locations;
-    [SerializeField] ParticleSystem VFX;
+    [SerializeField] Material[] color;
+    [SerializeField] ParticleSystem[] VFX;
     [SerializeField] float timeToTeleport;
     [SerializeField] public bool power = true;
 
@@ -24,6 +25,7 @@ public class VariableTeleporter : MonoBehaviour
     private void Start()
     {
         colorSwitcher = GetComponentInChildren<ColorSwitcher>();
+        colorSwitcher.GetColor(color);
 
         variableTeleporters = new VariableTeleporter[locations.Length];
 
