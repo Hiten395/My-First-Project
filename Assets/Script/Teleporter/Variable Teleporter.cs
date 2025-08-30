@@ -6,6 +6,7 @@ public class VariableTeleporter : MonoBehaviour
     [SerializeField] GameObject[] locations;
     [SerializeField] Material[] color;
     [SerializeField] ParticleSystem[] VFX;
+    [SerializeField] Vector3 VFXoffset;
     [SerializeField] float timeToTeleport;
     [SerializeField] public bool power = true;
 
@@ -118,7 +119,7 @@ public class VariableTeleporter : MonoBehaviour
 
     IEnumerator TeleportRoutine(GameObject other)
     {
-        //VFX.Play();
+        Instantiate(VFX[currentDestinationID], transform.position + new Vector3(0.55f,-0.1f,-0.6f), VFX[currentDestinationID].transform.rotation, this.gameObject.transform);
         yield return new WaitForSeconds(timeToTeleport);
         Teleport(other);
     }
