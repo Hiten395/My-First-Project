@@ -230,6 +230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e3a72a1732242fb99cd4a0f10cfc82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnOn: {fileID: 8300000, guid: 5cb61f6c91fae4ffda2ba393b6b495d5, type: 3}
+  turnOff: {fileID: 8300000, guid: 42b4db839b20d4167ac8f2edb9ecd3ba, type: 3}
 --- !u!95 &8301139866643799615
 Animator:
   serializedVersion: 7

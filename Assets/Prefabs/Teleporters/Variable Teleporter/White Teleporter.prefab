@@ -4929,7 +4929,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  VFX: {fileID: 0}
+  color: []
+  VFX:
+  - {fileID: 0}
+  VFXoffset: {x: 0, y: 0, z: 0}
   timeToTeleport: 1
   power: 1
 --- !u!1 &2579254618999781892
@@ -19499,7 +19502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1894619267005718160, guid: a11f3332050e74ba0b92aa6448878095, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.157
+      value: 0.016
       objectReference: {fileID: 0}
     - target: {fileID: 1894619267005718160, guid: a11f3332050e74ba0b92aa6448878095, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19511,19 +19514,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1894619267005718160, guid: a11f3332050e74ba0b92aa6448878095, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9997814
+      value: 0.9967105
       objectReference: {fileID: 0}
     - target: {fileID: 1894619267005718160, guid: a11f3332050e74ba0b92aa6448878095, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1894619267005718160, guid: a11f3332050e74ba0b92aa6448878095, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.020908521
+      value: -0.0810443
       objectReference: {fileID: 0}
     - target: {fileID: 1894619267005718160, guid: a11f3332050e74ba0b92aa6448878095, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1894619267005718160, guid: a11f3332050e74ba0b92aa6448878095, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
