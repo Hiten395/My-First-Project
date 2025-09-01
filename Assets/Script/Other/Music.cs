@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class Music : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    AudioSource audioSource;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
+        DontDestroyOnLoad(gameObject);
     }
 }
