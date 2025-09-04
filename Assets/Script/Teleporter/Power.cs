@@ -4,6 +4,7 @@ public class Power : MonoBehaviour
 {
     VariableTeleporter variableTeleporter;
     AudioSource audioSource;
+    Animator animator;
 
     bool state = false;
 
@@ -11,12 +12,14 @@ public class Power : MonoBehaviour
     {
         variableTeleporter = GetComponentInParent<VariableTeleporter>();
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     public void StartPower()
     {
         if (state) return;
 
+        animator.SetTrigger("TurnOn");
         audioSource.Play();
         variableTeleporter.TurnOn();
         state = true;

@@ -30,7 +30,7 @@ public class Door : MonoBehaviour
         }
     }
 
-    void Open()
+    public void Open()
     {
         animator.SetTrigger("Open");
     }

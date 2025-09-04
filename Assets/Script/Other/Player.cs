@@ -10,13 +10,17 @@ public class Player : MonoBehaviour
     const string BOX_STRING = "Box";
     const string BUTTON_STRING = "Button";
     const string POWER_STRING = "Power";
+    const string DOOR_STRING = "Door";
 
     public bool hold = false;
+    public bool debug = false;
 
     public void PickUp()
     {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.rotation * Vector3.forward, out hit, maxInteractDistace, layerMask, queryTriggerInteraction: QueryTriggerInteraction.Ignore))
         {
+            //Debug.Log(hit.collider.gameObject);
+
             if (hit.collider.gameObject.CompareTag(BOX_STRING))
             {
                 Box box = hit.collider.gameObject.GetComponent<Box>();
@@ -30,6 +34,13 @@ public class Player : MonoBehaviour
                     box.Drop();
                     hold = false;
                 }
+            }
+
+            // debug component to skip doors
+            if (hit.collider.gameObject.CompareTag(DOOR_STRING) && debug)
+            {
+                Door door = hit.collider.gameObject.GetComponentInParent<Door>();
+                door.Open();
             }
         }
     }
@@ -55,7 +66,7 @@ public class Player : MonoBehaviour
 
     public void Test()
     {
-        //
+        debug = true;
     }
 
 }
